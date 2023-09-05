@@ -20,7 +20,7 @@ html,body{
     justify-content: center;
 }
 #form{
-	margin-top:15px;
+	margin-top:75px;
 }
 .all-container{
 	width:100%;
@@ -57,7 +57,7 @@ th{
     background-color: rgb(127, 142, 251);
     color: white;
 }
-input[type="text"]:not(#sample6_postcode,#sample6_address,#sample6_detailAddress,#sample6_extraAddress){/*input type=text 태그로 나눔*/
+input[type="text"]:not(#sample6_postcode,#sample6_address,#sample6_detailAddress,#sample6_extraAddress,#serch){/*input type=text 태그로 나눔*/
     width: 97%;
     height: 95%;
     border: none;/*테투리 표시를 하지 않는다*/
@@ -65,7 +65,7 @@ input[type="text"]:not(#sample6_postcode,#sample6_address,#sample6_detailAddress
 input:focus {outline: none;}/*클릭시 테투리를 제거*/
 textarea:focus {outline: none;}/*클릭시 테투리를 제거*/
 
-input[type="text"]{
+input[type="text"]:not(#serch){
     padding-left: 5px;
 }
 #sample6_address{
@@ -126,4 +126,41 @@ button{
 }
 button:hover{
     background-color: rgb(115, 131, 250);/*hover를 이용하여 마우스 포인터가 이동했을 때 진한 색상으로 변경*/
+}
+
+a{
+    text-decoration: none;
+    color: #58595B;
+}
+
+
+.header_full_box{
+    width:60%;
+    margin:0 auto;
+    background-color: white;
+    position:fixed;
+    padding-top:10px;
+    padding-bottom: 25px;
+    top:0;
+    left:20%;
+    z-index: 1;
+    border-bottom:1px solid rgba(238, 235, 235,0.7);
+
+}
+.header_full_box{
+    display: flex;
+}
+.header_nav{
+    height: 40px;
+    width: 30%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+.header_nav input{
+    height: 35px;
+    border-radius: 10px;
+    margin-top: 5px;
+    border: 1px solid gray;
 }

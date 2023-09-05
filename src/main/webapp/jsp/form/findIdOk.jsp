@@ -53,6 +53,12 @@
                   </div>
                   <input type="submit" class="find-id-btn" id="find-id-btn" value = "로그인 하러 가기">                  
              </c:when>
+             <c:otherwise>
+           <script>
+           alert('입력된 정보로 아이디를 찾을 수 없습니다. 다시 시도해주세요.'); 
+           window.location.href= 'http://localhost:8888/bbagym/jsp/form/findId.jsp';
+           </script>
+   </c:otherwise>
              </c:choose> 
         </form>
     </div>        

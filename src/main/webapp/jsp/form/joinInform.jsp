@@ -36,6 +36,7 @@
             <div class="infrom-container">
                 <div class="inform-text">비밀번호 확인</div>
                 <input type="password" placeholder="다시 한번 비밀번호를 입력해 주세요." class="inform" id="pw-check">
+                <div class="check-text">비밀번호가 일치하지 않습니다</div>
             </div>
             <div class="inform-container">
                 <div class="inform-text">이름</div>
@@ -58,7 +59,7 @@
             <input type="submit" value="가입완료" class="join-btn" id="join-btn" disabled>
         </form>
     </div>
-    <script src="../../js/form/joinInform.js"></script>
+    <script src="${pageContext.servletContext.contextPath }/js/form/joinInform.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 <%@include file="../../footer.jsp" %>
    <script type="text/javascript">

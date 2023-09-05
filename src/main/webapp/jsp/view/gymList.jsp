@@ -25,7 +25,7 @@
                         <div class="list-img-box"><!--게시판 사진 컨테이너-->
                             <a href="selBoardDetailOk.bo?boardNum=${board.getBoardNum()}">
                             
-                            <img class="list-img" src="${pageContext.request.contextPath}/uploadFile/logo.png"/><!-- } -->
+                            <img class="list-img" src="${pageContext.request.contextPath}/uploadFile/${board.getImageName()}"/><!-- } -->
                                
                             </a>
                         </div>

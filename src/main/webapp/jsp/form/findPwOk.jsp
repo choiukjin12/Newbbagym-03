@@ -63,6 +63,12 @@
                   </div>
                   <input type="submit" class="find-pw-btn" id="find-pw-btn" value = "로그인 하러 가기">                 
              </c:when>
+                <c:otherwise>
+      <script>
+           alert('입력된 정보로 비밀번호를 찾을 수 없습니다. 다시 시도해주세요.'); 
+             window.location.href= 'http://localhost:8888/bbagym/jsp/form/findPw.jsp';
+             </script>
+   </c:otherwise>
              </c:choose> 
         </form>
     </div>

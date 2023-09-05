@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.rmi.ServerException;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,6 +11,8 @@ import com.bbagym.app.Execute;
 import com.bbagym.app.Result;
 import com.bbagym.app.board.dao.BoardDAO;
 import com.bbagym.app.board.dto.BoardDTO;
+import com.bbagym.app.businessUser.BusinessLoginOkController;
+import com.bbagym.app.dto.BusinessUserDTO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -42,8 +43,8 @@ public Result execute(HttpServletRequest request, HttpServletResponse response) 
         
 
         boardDTO.setBoardName(mr.getParameter("title"));
-        boardDTO.setImageName(mr.getFile("photoName").toString().substring(57));
-        System.out.println(mr.getFile("photoName").toString().substring(57));
+        boardDTO.setImageName(mr.getFile("photoName").toString().substring(67));
+        System.out.println(mr.getFile("photoName").toString().substring(67));
         boardDTO.setBoardAddress(mr.getParameter("address"));
        
         
@@ -56,7 +57,20 @@ public Result execute(HttpServletRequest request, HttpServletResponse response) 
         boardDTO.setBoardDate(mr.getParameter("Date"));
 
         boardDTO.setAdminNum();
-        boardDTO.setBusinessUserNum(2);
+        
+        // 세션에서 비즈니스 사용자 번호 가져오기
+        Object businessUserNumObj = request.getSession().getAttribute("BusinessUserNum");
+        int businessUserNum = -1;
+        if (businessUserNumObj != null && businessUserNumObj instanceof Integer) {
+            businessUserNum = (Integer) businessUserNumObj;
+        }
+
+        // 가져온 비즈니스 사용자 번호를 boardDTO에 설정
+        boardDTO.setBusinessUserNum(businessUserNum);
+        
+        
+
+        System.out.println(businessUserNum);
         System.out.println("GymWrite : "+boardDTO.toString());
         
         boardDAO.gymWrite(boardDTO);

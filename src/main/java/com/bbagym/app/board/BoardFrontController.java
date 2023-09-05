@@ -97,7 +97,7 @@ public class BoardFrontController extends HttpServlet {
 	             
 	             ServletContext context = getServletContext();
 	             String relativePath = "src/uploadFile";             
-	             String realPath ="C:\\bbagym-03\\workspace\\bbagym\\src\\main\\webapp\\uploadFile";
+	             String realPath ="C:\\Users\\com\\Desktop\\finalBbagym\\bbagym\\src\\main\\webapp\\uploadFile";
 	             result = new GymWriteOkController(realPath).execute(request, response);
 	             request.getRequestDispatcher("gymList.bo").forward(request, response);
 	             break;
